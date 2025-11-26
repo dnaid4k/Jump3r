@@ -43,10 +43,10 @@ How to run locally:
 
 Backend:
 
-
 cd backend
 
 uvicorn app.main:app --reload --port 8000
+
 ----
 Frontend:
 
@@ -55,6 +55,8 @@ cd frontend
 npm install
 
 npm start
+
 ----
 How to run with Docker
+
 docker compose up --build
