@@ -1,0 +1,51 @@
+<div *ngIf="!gameStarted" class="menu">
+  <div style="position:absolute;top:10px;right:10px;display:flex;gap:10px;">
+
+  <a *ngIf="!isLoggedIn" routerLink="/login">
+    <button>LOGIN</button>
+  </a>
+
+  <a *ngIf="!isLoggedIn" routerLink="/register">
+    <button>REGISTER</button>
+  </a>
+
+  <div *ngIf="isAdmin" class="admin-btn">
+  <a routerLink="/admin">
+    <button>ADMIN PANEL</button>
+  </a>
+  </div>
+
+  <button *ngIf="isLoggedIn" (click)="logout()">
+  LOGOUT ({{ username }})
+</button>
+
+</div>
+  <div style="height: 150px;"></div>
+  <h1>JUMP3R</h1>
+  <h2>Choose difficulty</h2>
+  <button (click)="startGame(1)">Level 1 (letters only)</button>
+  <button (click)="startGame(2)">Level 2 (letters + symbols)</button>
+  <div class="leader-wrap">
+
+  <div>
+    <h3>TOP 5 - LEVEL 1</h3>
+    <div *ngFor="let r of topL1">
+      {{r.nickname}} - score: {{r.points}}
+    </div>
+  </div>
+
+  <div>
+    <h3>TOP 5 - LEVEL 2</h3>
+    <div *ngFor="let r of topL2">
+      {{r.nickname}} - score: {{r.points}}
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div *ngIf="gameStarted">
+  <div style="height: 200px;"></div>
+  <canvas #gameCanvas width="800" height="300"></canvas>
+</div>

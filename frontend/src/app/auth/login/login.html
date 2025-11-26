@@ -1,0 +1,20 @@
+<div class="page-bg">
+  <div class="form-card">
+
+    <button class="back-btn" routerLink="/">
+      <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#1f1f1f">
+         <path d="m287-446.67 240 240L480-160 160-480l320-320 47 46.67-240 240h513v66.66H287Z"/>
+     </svg>
+    </button>
+
+    <h2>Login</h2>
+
+    <input class="form-input" placeholder="Username" [(ngModel)]="username">
+    <input class="form-input" type="password" placeholder="Password" [(ngModel)]="password">
+
+    <button class="form-btn" (click)="login()">Login</button>
+
+    <div *ngIf="error" class="msg-error">{{error}}</div>
+
+  </div>
+</div>
