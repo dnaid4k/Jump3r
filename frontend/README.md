@@ -35,7 +35,7 @@ Backend:
 - JWT Auth
 - SQLite
 
-DevOps
+Deployment:
 - Docker
 - docker-compose
 
